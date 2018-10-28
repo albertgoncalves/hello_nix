@@ -19,3 +19,5 @@ $ bash run_jshint.sh --version
 $ bash run_jshint.sh script.js
 ```
 should print out the installed version number and lint `script.js`.
+
+Once you're done, <kbd>ctrl</kbd> + <kbd>d</kbd> or `$ exit` will set the world to rights.
