@@ -1,6 +1,6 @@
 # Hello, Nix!
 
-A small repo of early `Hello, World!`-like exercises with the Nix package manager.
+A small assortment of `Hello, World!`-like exercises with the Nix package manager.
 
 Needed things
 ---
