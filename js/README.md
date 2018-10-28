@@ -1,6 +1,4 @@
 # Nix and JavaScript
-
----
 ```bash
 $ bash shell.sh
 ```
