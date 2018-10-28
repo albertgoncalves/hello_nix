@@ -1,2 +1,9 @@
-node_modules
-package-lock.json
+*
+!*.nix
+!*.sh
+!hs
+!*.hs
+!js
+!*.js
+!py
+!*.py
