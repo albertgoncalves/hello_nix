@@ -1,5 +1,4 @@
 # Nix and Python
-
 ```bash
 $ bash shell.sh
 ```
