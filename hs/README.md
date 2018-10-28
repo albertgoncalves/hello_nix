@@ -11,14 +11,14 @@ $ nix-shell
 From inside the `nix-shell`:
 
 ```bash
-$ runhaskell hello_vector.hs
+$ runhaskell hello_nix.hs
 ```
 will evaluate the given Haskell script at runtime.
 
 Meanwhile,
 ```bash
-$ ghc hello_vector.hs
-$ ./hello_vector
+$ ghc hello_nix.hs
+$ ./hello_nix
 ```
 should compile the script to an executable and set it free, just like old times.
 

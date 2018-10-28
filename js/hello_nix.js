@@ -7,4 +7,4 @@ const main = () => {
     ys.map(add(x)).forEach((y) => console.log(y));
 };
 
-main();
+main()
