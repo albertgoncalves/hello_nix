@@ -1,6 +1,6 @@
 # Nix and Python
 ```bash
-$ bash shell.sh
+$ nix-shell -p 'python3.withPackages(ps: with ps; [ numpy pandas ])'
 ```
 will run drop you into a `nix-shell` with `python3`, `numpy`, and `pandas`.
 

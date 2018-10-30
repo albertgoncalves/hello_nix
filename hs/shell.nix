@@ -4,10 +4,10 @@ let
 
     inherit (nixpkgs) pkgs;
 
-    f = { mkDerivation, base, stdenv, yesod }:
+    f = { mkDerivation, base, stdenv }:
         mkDerivation {
-            pname = "hask";
-            version = "0.1.0.0";
+            pname = "haskell";
+            version = "0";
             src = ./.;
             isLibrary = false;
             isExecutable = true;
@@ -28,4 +28,6 @@ let
 
 in
 
-    if pkgs.lib.inNixShell then drv.env else drv
+    if pkgs.lib.inNixShell
+        then drv.env
+    else drv
