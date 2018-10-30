@@ -1,9 +1,6 @@
 # Nix and JavaScript
 
-In this case, all I wanted to do was install `jshint` into my local environment (as opposed to installing libraries for use inside `node`).
-
----
-To make this happen, all we need to do is create a `shell.nix` file in the local directory like so:
+In order to setup a simple environment with `node` and `jshint`, we will need to create a small `shell.nix` file.
 
 ```nix
 { pkgs ? import <nixpkgs> {} }:
@@ -24,17 +21,14 @@ with pkgs; mkShell {
     '';
 }
 ```
-This will tell `Nix` to give us `node` and `npm`. Prior to letting us into the `nix-shell` environment, `nix` will run the terminal commands assigned to the `shellHook` variable.
+This will tell `Nix` to give us `node` and `npm`. Prior to handing over the keys, `nix` will run the terminal commands assigned to the `shellHook` variable.
 
 ---
-Once this file is in place, just hammer out
+With the stage set:
 ```bash
 $ nix-shell
 ```
-which will drop you into a `node`-ready `nix-shell`.
 
----
-From there:
 ```bash
 $ node hello_nix.js
 3

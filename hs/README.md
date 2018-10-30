@@ -3,7 +3,9 @@
 As opposed to the [Python](https://github.com/albertgoncalves/hello_nix/tree/master/py) example, booting up this `nix-shell` involves a `shell.nix` file instead of trying to get everything across in a one-liner.
 
 ---
-We will need a `shell.nix` file, just so:
+We will need a `shell.nix` file; from what I can tell, there are **many** ways to write one of those.
+
+Here's one way:
 
 ```nix
 { nixpkgs ? import <nixpkgs> {}, compiler ? "default" }:
@@ -42,13 +44,13 @@ in
 ```
 
 ---
-With that, simply say:
+With that out of the way:
 ```bash
 $ nix-shell
 ```
 
 ---
-If everything went according to plan, we can evaluate scripts at runtime:
+If everything went according to plan, we can evaluate code at runtime:
 ```bash
 $ runhaskell hello_nix.hs
 0.49725085
