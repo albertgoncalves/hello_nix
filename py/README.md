@@ -5,9 +5,13 @@ $ nix-shell -p 'python3.withPackages(ps: with ps; [ numpy pandas ])'
 will run drop you into a `nix-shell` with `python3`, `numpy`, and `pandas`.
 
 ---
-If everything goes according to plan this should go off without a hitch:
+If everything goes according to plan,
 ```bash
-python hello_nix.py
+$ python hello_nix.py
+python: 3.6.6 (default, Oct  5 2018, 13:50:59)
+[GCC 4.2.1 Compatible Clang 5.0.2 (tags/RELEASE_502/final)]
+numpy : 1.15.1
+pandas: 0.23.4
 ```
 
 ---
