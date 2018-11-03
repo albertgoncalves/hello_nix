@@ -35,7 +35,7 @@ Rscript hello_nix.R
 ```
 
 ---
-Additionally, with the aid of the small function included in the `shellHook` we can streamline the interactive `R` experience a little bit:
+Additionally, with the aid of the small function included in the `shellHook`, we can streamline the interactive `R` experience a little bit:
 ```bash
 $ copyfile hello_nix.R
 $ R

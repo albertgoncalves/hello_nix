@@ -17,7 +17,7 @@ ui = function() {
                     ))
 }
 
-server = function(input, output) {
+server = function(input, output, session) {
     distPlot = function() {
         ggplot(faithful, aes(x=waiting)) +
             geom_histogram(binwidth=input$bins) +
@@ -27,11 +27,11 @@ server = function(input, output) {
                 )
     }
     output$distPlot = renderPlot(distPlot())
+    session$onSessionEnded(function() stopApp())
 }
 
 main = function() {
-    path = Sys.getenv('BROWSERPATH')
-    options('browser'=path)
+    options('browser'=Sys.getenv('BROWSERPATH'))
     shinyApp(ui=ui(), server=server, options=list('launch.browser'=TRUE))
 }
 
