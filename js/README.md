@@ -8,8 +8,7 @@ In order to setup a simple environment with `node` and `jshint`, we will need to
 with pkgs; mkShell {
     name = "jshint";
 
-    buildInputs = [ nodejs
-                  ];
+    buildInputs = [ nodejs ];
 
     shellHook = ''
         if [ ! -e node_modules/.bin/jshint ]
