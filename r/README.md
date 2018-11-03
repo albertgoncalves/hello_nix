@@ -9,6 +9,7 @@ stdenv.mkDerivation {
 
     buildInputs = [ R
                     rPackages.ggplot2
+                    rPackages.lintr
                     rPackages.shiny
                   ];
 
@@ -41,6 +42,34 @@ $ copyfile hello_nix.R
 $ R
 ```
 Then <kbd>cmd</kbd> + <kbd>v</kbd> once you're on the inside.
+
+---
+If you want to lint your `r` scripts, looks like `lintr` also came along for the ride:
+```bash
+$ R
+```
+
+```R
+> library(lintr)
+> lint('hello_nix.R')
+
+hello_nix.R:29:23: warning: no visible global function definition for ‘renderPlot’
+    output$distPlot = renderPlot(distPlot())
+                      ^~~~~~~~~~
+hello_nix.R:30:39: warning: no visible global function definition for ‘stopApp’
+    session$onSessionEnded(function() stopApp())
+                                      ^~~~~~~
+hello_nix.R:35:5: warning: no visible global function definition for ‘shinyApp’
+    shinyApp(ui=ui(), server=server, options=list("launch.browser"=TRUE))
+    ^~~~~~~~
+hello_nix.R:35:14: warning: no visible global function definition for ‘ui’, Did you mean 'vi'?
+    shinyApp(ui=ui(), server=server, options=list("launch.browser"=TRUE))
+             ^~
+hello_nix.R:35:23: warning: no visible binding for global variable ‘server’
+    shinyApp(ui=ui(), server=server, options=list("launch.browser"=TRUE))
+                      ^~~~~~
+```
+If needs be, linting operations can controlled with a `.lintr` config file.
 
 ---
 Once you're done, <kbd>ctrl</kbd> + <kbd>d</kbd> or `$ exit` will set the world to rights.

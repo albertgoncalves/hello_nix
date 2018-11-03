@@ -5,6 +5,7 @@ stdenv.mkDerivation {
 
     buildInputs = [ R
                     rPackages.ggplot2
+                    rPackages.lintr
                     rPackages.shiny
                   ];
 
