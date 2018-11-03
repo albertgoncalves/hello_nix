@@ -1,7 +1,7 @@
 { pkgs ? import <nixpkgs> {} }:
 
 with pkgs; mkShell {
-    name = "js";
+    name = "javascript";
 
     buildInputs = [ nodejs ];
 

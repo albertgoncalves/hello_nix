@@ -6,7 +6,7 @@ In order to setup a simple environment with `node` and `jshint`, we will need to
 { pkgs ? import <nixpkgs> {} }:
 
 with pkgs; mkShell {
-    name = "jshint";
+    name = "javascript";
 
     buildInputs = [ nodejs ];
 
