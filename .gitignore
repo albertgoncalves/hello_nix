@@ -7,6 +7,9 @@
 !*.hs
 !js
 !*.js
+!.jshintrc
 !py
 !*.py
-!.jshintrc
+!r
+!*.R
+!browser_path.txt

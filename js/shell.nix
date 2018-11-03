@@ -1,10 +1,9 @@
 { pkgs ? import <nixpkgs> {} }:
 
 with pkgs; mkShell {
-    name = "jshint";
+    name = "js";
 
-    buildInputs = [ nodejs
-                  ];
+    buildInputs = [ nodejs ];
 
     shellHook = ''
         if [ ! -e node_modules/.bin/jshint ]
