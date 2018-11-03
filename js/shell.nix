@@ -3,7 +3,7 @@
 with pkgs; mkShell {
     name = "javascript";
 
-    buildInputs = [ nodejs ];
+    buildInputs = [ nodejs-8_x ];
 
     shellHook = ''
         if [ ! -e node_modules/.bin/jshint ]

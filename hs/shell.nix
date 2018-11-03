@@ -1,4 +1,4 @@
-{ nixpkgs ? import <nixpkgs> {}, compiler ? "default" }:
+{ nixpkgs ? import <nixpkgs> {}, compiler ? "ghc861" }:
 
 let
 
@@ -8,7 +8,6 @@ let
         mkDerivation {
             pname = "haskell";
             version = "0";
-            src = ./.;
             isLibrary = false;
             isExecutable = true;
             executableHaskellDepends = [ base

@@ -8,7 +8,7 @@ We will need a `shell.nix` file; from what I can tell, there are **many** ways t
 Here's one way:
 
 ```nix
-{ nixpkgs ? import <nixpkgs> {}, compiler ? "default" }:
+{ nixpkgs ? import <nixpkgs> {}, compiler ? "ghc861" }:
 
 let
 
