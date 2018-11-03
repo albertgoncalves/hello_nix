@@ -56,7 +56,7 @@ $ runhaskell hello_nix.hs
 0.49725085
 1.1379123e-3
 0.9997634
-"It worked!
+"It worked!"
 ```
 
 ---
@@ -69,7 +69,7 @@ $ ./hello_nix
 0.49725085
 1.1379123e-3
 0.9997634
-"It worked!
+"It worked!"
 ```
 
 ---
