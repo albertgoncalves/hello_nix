@@ -10,6 +10,7 @@
 !.jshintrc
 !py
 !*.py
+!.pylintrc
 !r
 !*.R
-!browser_path.txt
+!.lintr
