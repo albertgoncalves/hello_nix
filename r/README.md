@@ -16,9 +16,7 @@ stdenv.mkDerivation {
     shellHook = ''
         export BROWSERPATH="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
 
-        copyfile() {
-            cat $1 | pbcopy
-        }
+        copyfile() { cat $1 | pbcopy; }
         export -f copyfile
     '';
 }

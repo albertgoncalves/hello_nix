@@ -10,6 +10,8 @@ with pkgs; mkShell {
                   ];
 
     shellHook = ''
+        copyfile() { cat $1 | pbcopy; }
+        export -f copyfile
         alias pylint='pylint -s n'
     '';
 }
