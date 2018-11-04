@@ -1,7 +1,7 @@
 { pkgs ? import <nixpkgs> {} }:
 
 with pkgs; mkShell {
-    name = "pylint";
+    name = "python";
 
     buildInputs = [ python3
                     python36Packages.numpy
