@@ -18,7 +18,7 @@ with pkgs; mkShell {
                   ];
 }
 ```
-It seems `libiconv` needs to tag along, for now anyways. From what I can tell, this is due in part to a bug when using **Nix** on **macOS High Sierra**. Your mileage may vary on other operating systems.
+With this approach, `libiconv` needs to tag along for the ride. From what I can tell, this is due in part to a bug when using **Nix** on **macOS High Sierra**. It may be unnecessary on other operating systems.
 
 ---
 With that out of the way:
