@@ -20,7 +20,7 @@ with pkgs; mkShell {
     '';
 }
 ```
-This will tell `Nix` to give us `node` and `npm`. Prior to handing over the keys, `nix` will run the terminal commands assigned to the `shellHook` variable.
+This will tell **Nix** to give us `node` and `npm`. Prior to handing over the keys, **Nix** will run the terminal commands assigned to the `shellHook` variable.
 
 ---
 With the stage set:

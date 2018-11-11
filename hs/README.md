@@ -1,47 +1,24 @@
 # Nix and Haskell
 
-As opposed to the [Python](https://github.com/albertgoncalves/hello_nix/tree/master/py) example, booting up this `nix-shell` involves a `shell.nix` file instead of trying to get everything across in a one-liner.
-
----
 We will need a `shell.nix` file; from what I can tell, there are **many** ways to write one of those.
 
 Here's one way:
 
 ```nix
-{ nixpkgs ? import <nixpkgs> {}, compiler ? "ghc861" }:
+{ pkgs ? import <nixpkgs> {} }:
 
-let
-
-    inherit (nixpkgs) pkgs;
-
-    f = { mkDerivation, base, stdenv }:
-        mkDerivation {
-            pname = "haskell";
-            version = "0";
-            src = ./.;
-            isLibrary = false;
-            isExecutable = true;
-            executableHaskellDepends = [ base
-                                         haskellPackages.vector
-                                         haskellPackages.random
-                                         haskellPackages.tf-random
-                                       ];
-            license = stdenv.lib.licenses.gpl3;
-        };
-
-    haskellPackages = if compiler == "default"
-                          then pkgs.haskellPackages
-                      else
-                          pkgs.haskell.packages.${compiler};
-
-    drv = haskellPackages.callPackage f {};
-
-in
-
-    if pkgs.lib.inNixShell
-        then drv.env
-    else drv
+with pkgs; mkShell {
+    name = "haskell";
+    buildInputs = [ (haskell.packages.ghc861.ghcWithPackages (pkgs: [
+                        pkgs.vector
+                        pkgs.random
+                        pkgs.tf-random
+                    ]))
+                    libiconv
+                  ];
+}
 ```
+For now, it seems `libiconv` needs to tag along. From what I can, tell this is due in part to a bug when using **Nix** on **macOS High Sierra**. Your mileage may vary on other operating systems.
 
 ---
 With that out of the way:
