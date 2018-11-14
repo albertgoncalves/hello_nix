@@ -1,7 +1,7 @@
 with import <nixpkgs> {};
 
 stdenv.mkDerivation {
-    name = "r";
+    name = "R";
 
     buildInputs = [ R
                     rPackages.ggplot2

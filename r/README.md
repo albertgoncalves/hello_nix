@@ -5,7 +5,7 @@ As with the other examples, a minimal `shell.nix` file goes a long ways:
 with import <nixpkgs> {};
 
 stdenv.mkDerivation {
-    name = "r";
+    name = "R";
 
     buildInputs = [ R
                     rPackages.ggplot2
@@ -42,7 +42,7 @@ $ R
 Then <kbd>cmd</kbd> + <kbd>v</kbd> once you're on the inside.
 
 ---
-If you want to lint your `r` scripts, looks like `lintr` also came along for the ride:
+If you want to lint your `R` scripts, looks like `lintr` also came along for the ride:
 ```bash
 $ R
 ```
