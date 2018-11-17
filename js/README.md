@@ -11,8 +11,7 @@ with pkgs; mkShell {
     buildInputs = [ nodejs-8_x ];
 
     shellHook = ''
-        if [ ! -e node_modules/.bin/jshint ]
-        then
+        if [ ! -e node_modules/.bin/jshint ]; then
             npm install --save-dev jshint
         fi
 
